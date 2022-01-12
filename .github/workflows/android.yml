@@ -33,3 +33,10 @@ jobs:
       with:
         name: files
         path: /tmp/files.txt 
+    - name: pack apk
+      run: tar cfvz /tmp/build.tgz ./ui/build/outputs
+    - name: Upload output
+      uses: actions/upload-artifact@v1
+      with:
+        name: files
+        path: /tmp/build.tgz
